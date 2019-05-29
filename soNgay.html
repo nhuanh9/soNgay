@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="thang">
+        <input type="button" id="btn" onclick="tinhNgay()" value="Chuyển">
+    </form>
+    <div id="ngay"></div>
+    <script>
+        function tinhNgay() {
+            var mont = parseInt(document.getElementById("thang").value);
+            var ngay = "";
+            switch (mont) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                {
+                    ngay = "31";
+                    break;
+                }
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                {
+                    ngay = "30";
+                    break;
+                }
+                case 2: {
+                    ngay = "28 hoặc 29";
+                    break;
+                }
+
+            }
+            document.getElementById('ngay').innerText = "Tháng "+mont+" có "+ngay+" ngày";
+        }
+    </script>
+</body>
+</html>
